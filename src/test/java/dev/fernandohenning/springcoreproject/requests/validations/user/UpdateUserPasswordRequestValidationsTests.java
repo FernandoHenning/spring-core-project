@@ -1,6 +1,5 @@
 package dev.fernandohenning.springcoreproject.requests.validations.user;
 
-import dev.fernandohenning.springcoreproject.dto.user.request.ResetUserPasswordResquest;
 import dev.fernandohenning.springcoreproject.dto.user.request.UpdateUserPasswordRequest;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
