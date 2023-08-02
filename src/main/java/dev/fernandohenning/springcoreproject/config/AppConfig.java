@@ -1,6 +1,6 @@
 package dev.fernandohenning.springcoreproject.config;
 
-import dev.fernandohenning.springcoreproject.Service.UserService;
+import dev.fernandohenning.springcoreproject.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
