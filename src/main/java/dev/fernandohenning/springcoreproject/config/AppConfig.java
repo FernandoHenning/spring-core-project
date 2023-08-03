@@ -1,6 +1,6 @@
 package dev.fernandohenning.springcoreproject.config;
 
-import dev.fernandohenning.springcoreproject.service.UserService;
+import dev.fernandohenning.springcoreproject.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +21,7 @@ import java.util.Properties;
 @RequiredArgsConstructor
 public class AppConfig {
 
-    private final UserService userService;
+    private final UserServiceImpl userServiceImpl;
 
     @Value("${spring.mail.username}")
     private String mailUsername;
@@ -36,7 +36,7 @@ public class AppConfig {
      */
     @Bean
     public UserDetailsService userDetailsService(){
-        return userService;
+        return userServiceImpl;
     }
     /**
      * Configures an AuthenticationProvider that uses the userDetailsService and passwordEncoder to authenticate users.
