@@ -1,6 +1,6 @@
 package dev.fernandohenning.springcoreproject.requests.validations.user;
 
-import dev.fernandohenning.springcoreproject.dto.user.request.ResetUserPasswordResquest;
+import dev.fernandohenning.springcoreproject.dto.user.request.ResetUserPasswordRequest;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -25,26 +25,26 @@ class ResetUserPasswordRequestValidationsTests {
 
     @Test
     void validResetEmailPasswordRequest(){
-        ResetUserPasswordResquest request = new ResetUserPasswordResquest(
+        ResetUserPasswordRequest request = new ResetUserPasswordRequest(
                 "test@tes.com"
         );
-        Set<ConstraintViolation<ResetUserPasswordResquest>> violations = validator.validate(request);
+        Set<ConstraintViolation<ResetUserPasswordRequest>> violations = validator.validate(request);
         Assertions.assertTrue(violations.isEmpty());
     }
     @Test
     void invalidResetUserPasswordRequest_InvalidEmail(){
-        ResetUserPasswordResquest request = new ResetUserPasswordResquest(
+        ResetUserPasswordRequest request = new ResetUserPasswordRequest(
                 "invalid_email"
         );
-        Set<ConstraintViolation<ResetUserPasswordResquest>> violations = validator.validate(request);
+        Set<ConstraintViolation<ResetUserPasswordRequest>> violations = validator.validate(request);
         Assertions.assertFalse(violations.isEmpty());
     }
     @Test
     void invalidResetUserPasswordRequest_InvalidEmailLength(){
-        ResetUserPasswordResquest request = new ResetUserPasswordResquest(
+        ResetUserPasswordRequest request = new ResetUserPasswordRequest(
                 "a@"
         );
-        Set<ConstraintViolation<ResetUserPasswordResquest>> violations = validator.validate(request);
+        Set<ConstraintViolation<ResetUserPasswordRequest>> violations = validator.validate(request);
         Assertions.assertFalse(violations.isEmpty());
     }
 }
