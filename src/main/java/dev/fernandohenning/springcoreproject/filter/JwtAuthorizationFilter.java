@@ -71,7 +71,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
         }
     }
 
-    private void processTokenAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain, String jwt) throws IOException, ServletException {
+    private void processTokenAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain, String jwt) throws IOException{
         try {
             String username = jwtService.extractUsername(jwt);
             UserDetailsImpl userDetails = (UserDetailsImpl) userService.loadUserByUsername(username);
